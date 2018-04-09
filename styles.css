@@ -1,0 +1,39 @@
+ul#nav {
+    position:relative;
+}
+
+ul#nav > li.selected {
+    color: #00bb00;
+}
+
+ul#nav > li {
+    display: inline-block;
+    padding: 10px;
+    padding-bottom: 3px;
+    margin: 0;
+}
+
+ul#nav > li:not(.selected):not(#nav_indicator):hover {
+    color: orange;
+    border-bottom: 3px solid orange;
+}
+
+ul#nav > li:not(#nav_indicator) {
+    border-bottom: 3px solid #ddd;
+    cursor:pointer;
+    transition-duration: 0.5s, 0.5s;
+    transition-property: color, border-color;
+    transition-delay: 0.1s, 0.1s;
+}
+
+ul#nav > li#nav_indicator {
+    position: absolute;
+    display:inline-block;
+    width: 0px; /* kept hidden until script applies width and paddings */
+    padding: 0;
+    background-color: #00bb00;
+    bottom: 0;
+    height: 3px;
+    transition-property: left, width;
+    transition-duration: 1s, 1s;
+}
